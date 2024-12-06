@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
@@ -35,5 +36,7 @@ class RolePermissionSeeder extends Seeder
 
         // Normal user role will not get all permissions by default
         $user->givePermissionTo('user-create', 'user-update', 'user-list', 'user-view', 'user-delete');
+
+
     }
 }
