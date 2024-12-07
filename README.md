@@ -102,7 +102,9 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    127.0.0.1 user-management.backend
 
 3. **Update your .env file with the virtual host URL:**
-  ```bash
+   ```bash
    env
    APP_URL=http://user-management.backend
+
+4. **Restart your web server:**
 
