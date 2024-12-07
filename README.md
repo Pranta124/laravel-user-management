@@ -75,6 +75,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    ```bash
    php artisan migrate
 ## Seed the roles and permissions
+**Run those seed:**
     ```bash
          php artisan db:seed --class=RolePermissionSeeder
          php artisan db:seed --class=UserRolePermissionSeeder
