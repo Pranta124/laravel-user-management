@@ -108,3 +108,11 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 
 4. **Restart your web server:**
 
+## Usage
+## Authentication
+* Use the Password Grant Token client for authentication.
+* Ensure requests include the following header:
+  ```bash
+   Accept: application/json
+## API Documentation
+
