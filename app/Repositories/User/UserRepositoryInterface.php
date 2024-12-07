@@ -17,7 +17,7 @@ interface UserRepositoryInterface
      * @param int $id
      * @return mixed
      */
-    public function find(int $id);
+    public function findById(int $id);
 
     /**
      * Create a new user.
@@ -43,4 +43,7 @@ interface UserRepositoryInterface
      * @return bool
      */
     public function delete(int $id): bool;
+
+    public function assignPermissionsToUser(int $userId, string $permissionName): bool;
+
 }

@@ -35,7 +35,7 @@ class RolePermissionSeeder extends Seeder
         $admin->givePermissionTo(Permission::all());
 
         // Normal user role will not get all permissions by default
-        $user->givePermissionTo('user-create', 'user-update', 'user-list', 'user-view', 'user-delete');
+//        $user->givePermissionTo('user-create', 'user-update', 'user-list', 'user-view', 'user-delete');
 
 
     }

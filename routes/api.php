@@ -10,4 +10,6 @@ Route::prefix('auth')->group(function () {
 });
 Route::middleware('auth:api')->prefix('auth')->as('auth.')->group(function () {
     Route::resource('user-data', UserController::class);
+    Route::post('user/{id}/assign-permission', [UserController::class, 'assignPermission']);
+
 });
