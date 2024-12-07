@@ -24,6 +24,9 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/Pranta124/laravel-user-management.git
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Pranta124/laravel-user-management.git
     
 
 
