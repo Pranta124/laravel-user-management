@@ -24,7 +24,21 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 1. Clone the repository:
    ```bash
    git clone https://github.com/Pranta124/laravel-user-management.git
+2. Install dependencies:
+  ```bash
+    composer install
+3. Copy the example .env file:
+     ```bash
+    cp .env.example .env
+4. Update your .env file with database credentials and application configuration.
+5. Generate the application key:
+     ```bash
+    php artisan key:generate
+6. Run migrations:
+     ```bash
+    php artisan migrate
 
+    
 
 
 
