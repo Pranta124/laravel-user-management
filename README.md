@@ -116,3 +116,6 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    Accept: application/json
 ## API Documentation
 
+## License
+*This project is open-source and available
+
