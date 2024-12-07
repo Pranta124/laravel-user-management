@@ -6,6 +6,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 - [Configuration](#configuration)
   - [Laravel Passport](#laravel-passport)
   - [Spatie Laravel Permission](#spatie-laravel-permission)
+  - [Seed the roles and permissions](#seed-role-permission)
 - [Virtual Host Setup](#virtual-host-setup)
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
@@ -60,3 +61,17 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    You'll get a Client ID and Client Secret. Add these to your .env file:
    OAUTH_CLIENT_ID=1
    OAUTH_CLIENT_SECRET=FhU64RmMUYD63HG1lDFYsOnQJOnf9jF8irB41H23
+## Spatie Laravel Permission
+1. **Install the package:**
+   ```bash
+   composer require spatie/laravel-permission --ignore-platform-req=ext-sodium
+2. **Publish the package configuration:**
+   ```bash
+   php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+3. **Publish the package configuration:**
+   ```bash
+   php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+4. **Run database migrations:**
+   ```bash
+   php artisan migrate
+
