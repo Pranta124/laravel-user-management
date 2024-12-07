@@ -152,6 +152,8 @@ class UserController extends Controller
             return $this->ResponseError('User not found', HttpStatusCode::NOT_FOUND);
         }
 
+        $updatedEmail = $user->email . '#deleted-' . time();
+        $this->userRepository->update($id, ['email' => $updatedEmail]);
         // Delete the user
         $this->userRepository->delete($id);
 
