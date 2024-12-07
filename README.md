@@ -45,6 +45,18 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 2. **Install Passport:**
    ```bash
    php artisan passport:install
-
-
-
+3. **Publish Passport’s resources:**
+   ```bash
+   php artisan vendor:publish --provider="Laravel\Passport\PassportServiceProvider"
+4. **Run database migrations:**
+   ```bash
+   php artisan migrate
+5. **Passport key generate:**
+   ```bash
+   php artisan passport:keys
+6. **Create Password Grant Client:**
+   ```bash
+   php artisan passport:client --password
+   You'll get a Client ID and Client Secret. Add these to your .env file:
+   OAUTH_CLIENT_ID=1
+   OAUTH_CLIENT_SECRET=FhU64RmMUYD63HG1lDFYsOnQJOnf9jF8irB41H23
