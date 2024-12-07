@@ -84,3 +84,15 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 1. **Regenerate the autoload files:**
    ```bash
    composer dump-autoload
+## Virtual Host Setup
+1. **Set up a virtual host to point to your Laravel project. Example configuration for Apache:**
+   ```bash
+   <VirtualHost *:80>
+    ServerName user-management.backend
+    DocumentRoot /path/to/laravel-user-management/public
+
+    <Directory /path/to/laravel-user-management/public>
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
