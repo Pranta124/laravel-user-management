@@ -21,23 +21,9 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 * Utilize the Repository Pattern: Follows the Repository Pattern for a clean separation of concerns, making the application scalable and testable.
 * Follow PSR Standards: Adheres to PHP Standards Recommendations (PSR) for clean, consistent, and maintainable code.
 ## Installation Steps
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/Pranta124/laravel-user-management.git
-2. Install dependencies:
-  ```bash
-    composer install
-3. Copy the example .env file:
-     ```bash
-    cp .env.example .env
-4. Update your .env file with database credentials and application configuration.
-5. Generate the application key:
-     ```bash
-    php artisan key:generate
-6. Run migrations:
-     ```bash
-    php artisan migrate
-
     
 
 
