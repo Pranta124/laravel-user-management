@@ -39,6 +39,12 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    php artisan migrate
 ## Configuration
 ## Laravel Passport
+1. **Install the Passport package:**
+   ```bash
+   composer require laravel/passport --ignore-platform-req=ext-sodium
+2. **Install Passport:**
+   ```bash
+   php artisan passport:install
 
 
 
