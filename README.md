@@ -114,10 +114,10 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 * Ensure requests include the following header:
   ```bash
    Accept: application/json
-## API Documentation
-1. **This is the api documentation:**
+## API Collection Link
+1. **You can access the complete Postman collection for this project using the link below:**
    ```bash
-   (https://hsms00.postman.co/workspace/HSMS-Workspace~fb253094-c40d-45c8-a058-3c0720299fad/collection/35136827-ce9f2f40-c359-45ff-8466-847d419b4fe9?action=share&creator=35136827)
+   [API Documentation on Postman](https://documenter.getpostman.com/view/35136827/2sAYBbfA2b#53920490-e98d-416f-b16e-40b1c3648be9)
 
 ## License
 * This project is open-source and available
