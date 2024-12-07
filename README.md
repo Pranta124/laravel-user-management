@@ -38,7 +38,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    ```bash
    php artisan migrate
 ## Configuration
-* Laravel Passport
+- Laravel Passport
 
 
 
