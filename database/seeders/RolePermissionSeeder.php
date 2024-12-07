@@ -21,6 +21,7 @@ class RolePermissionSeeder extends Seeder
         foreach ($permissions as $permission) {
             Permission::firstOrCreate([
                 'name' => $permission, // permission name
+                'group_name'=> 'user management',
                 'guard_name' => 'api', // set guard_name to 'api'
             ]);
         }
@@ -35,7 +36,7 @@ class RolePermissionSeeder extends Seeder
         $admin->givePermissionTo(Permission::all());
 
         // Normal user role will not get all permissions by default
-//        $user->givePermissionTo('user-create', 'user-update', 'user-list', 'user-view', 'user-delete');
+        $user->givePermissionTo( 'user-list');
 
 
     }
