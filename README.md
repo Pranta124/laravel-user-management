@@ -31,6 +31,12 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    ```bash
    cp .env.example .env
 4. **Update your .env .** file with database credentials and application configuration.
+5. **Generate the application key:**
+   ```bash
+   php artisan key:generate
+6. **Run migrations:**
+   ```bash
+   php artisan migrate
   
     
 
