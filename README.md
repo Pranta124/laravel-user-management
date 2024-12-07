@@ -7,6 +7,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
   - [Laravel Passport](#laravel-passport)
   - [Spatie Laravel Permission](#spatie-laravel-permission)
   - [Seed Role Permission](#seed-role-permission)
+  - [Autoload File](#autoload-file)
 - [Virtual Host Setup](#virtual-host-setup)
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
@@ -79,3 +80,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
    ```bash
    php artisan db:seed --class=RolePermissionSeeder
    php artisan db:seed --class=UserRolePermissionSeeder
+## Autoload File
+1. **Regenerate the autoload files:**
+   ```bash
+   composer dump-autoload
