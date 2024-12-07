@@ -37,8 +37,6 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 6. **Run migrations:**
    ```bash
    php artisan migrate
-  
-    
 
 
 
