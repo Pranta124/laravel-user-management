@@ -115,6 +115,9 @@ A Laravel-based API for managing users, roles, and permissions with secure token
   ```bash
    Accept: application/json
 ## API Documentation
+1. **This is the api documentation:**
+   ```bash
+   (https://hsms00.postman.co/workspace/HSMS-Workspace~fb253094-c40d-45c8-a058-3c0720299fad/collection/35136827-ce9f2f40-c359-45ff-8466-847d419b4fe9?action=share&creator=35136827)
 
 ## License
 * This project is open-source and available
