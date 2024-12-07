@@ -18,6 +18,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 - Composer
 - Laravel 11.x+
 - MySQL Database
+- MySQL 8.3.0
 - ext-sodium (or use `--ignore-platform-req=ext-sodium`)
 ## Features
 * User Authentication: Secure token-based authentication using Laravel Passport.
