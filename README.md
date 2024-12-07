@@ -1,6 +1,7 @@
 # Laravel User Management
 A Laravel-based API for managing users, roles, and permissions with secure token-based authentication using Laravel Passport and Spatie Laravel Permission.
 # Table of Contents
+- [Requirements](#requirements)
 - [Features](#features)
 - [Installation Steps](#installation-steps)
 - [Configuration](#configuration)
@@ -12,6 +13,12 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
 - [License](#license)
+## Requirements
+- PHP 8.2+ 
+- Composer
+- Laravel 11.x+
+- MySQL Database
+- ext-sodium (or use `--ignore-platform-req=ext-sodium`)
 ## Features
 * User Authentication: Secure token-based authentication using Laravel Passport.
 * Role and Permission Management:
