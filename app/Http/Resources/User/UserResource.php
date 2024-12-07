@@ -32,6 +32,8 @@ class UserResource extends JsonResource
             'updated_at' => $this->updated_at,
             'roles' => $this->roles->pluck('id','name'),
             'permissions' => $this->permissions->pluck('name')->toArray(),
+            'permissions_via_roles' => $this->getPermissionsViaRoles()->pluck('name')->toArray(),
+
         ];
     }
     private function userData(): array
@@ -42,7 +44,9 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'roles' => $this->roles->pluck('id','name')
+            'roles' => $this->roles->pluck('id','name'),
+            'permissions' => $this->permissions->pluck('name')->toArray(),
+            'permissions_via_roles' => $this->getPermissionsViaRoles()->pluck('name')->toArray(),
         ];
     }
 }

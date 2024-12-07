@@ -53,7 +53,7 @@ class UserRepository implements UserRepositoryInterface
     public function assignPermissionsToUser(int $userId, $permissions): bool
     {
         // Find the user
-        $user = User::findById($userId);
+        $user = User::find($userId);
 
         if (!$user) {
             return false;

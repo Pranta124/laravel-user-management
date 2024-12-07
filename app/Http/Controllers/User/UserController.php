@@ -20,11 +20,22 @@ class UserController extends Controller
     public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
+
+        /** Middleware for **Role or Permission** - Grants access if the user has either the role or the permission */
+        $this->middleware('role_or_permission:user-list')->only(['index']);
+        $this->middleware('role_or_permission:user-create')->only(['store']);
+        $this->middleware('role_or_permission:user-update')->only(['update']);
+        $this->middleware('role_or_permission:user-view')->only(['show']);
+        $this->middleware('role_or_permission:user-delete')->only(['destroy']);
+        $this->middleware('role_or_permission:assign-permission')->only(['assignPermission']);
+
+        /** Middleware for **Permission** - Grants access only if the user has the specific permission */
         $this->middleware('permission:user-list')->only(['index']);
         $this->middleware('permission:user-create')->only(['store']);
         $this->middleware('permission:user-update')->only(['update']);
         $this->middleware('permission:user-view')->only(['show']);
         $this->middleware('permission:user-delete')->only(['destroy']);
+        $this->middleware('permission:assign-permission')->only(['assignPermission']);
     }
     /**
      * Display a listing of the resource.
@@ -138,14 +149,15 @@ class UserController extends Controller
 
         // Check if the user exists
         if (!$user) {
-            return response()->json(['message' => 'User not found'], HttpStatusCode::NOT_FOUND);
+            return $this->ResponseError('User not found', HttpStatusCode::NOT_FOUND);
         }
 
         // Delete the user
         $this->userRepository->delete($id);
 
         // Return a success response
-        return response()->json(['message' => 'User deleted successfully'], 200);
+        return $this->ResponseSuccess(null, 'User deleted successfully.');
+
     }
 
     public function assignPermission(AssignPermissionRequest $request, int $id): JsonResponse
