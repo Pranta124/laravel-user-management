@@ -98,10 +98,11 @@ A Laravel-based API for managing users, roles, and permissions with secure token
 </VirtualHost>
 
 2. **Add the virtual host to your system's /etc/hosts file:**
-  ```bash
-  127.0.0.1 user-management.backend
+   ```bash
+   127.0.0.1 user-management.backend
 
 3. **Update your .env file with the virtual host URL:**
   ```bash
-  env
-  APP_URL=http://user-management.backend
+   env
+   APP_URL=http://user-management.backend
+
