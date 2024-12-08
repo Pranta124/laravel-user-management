@@ -51,5 +51,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public const PERMISSIONS = [
+        'index' => 'user-list',
+        'store' => 'user-create',
+        'update' => 'user-update',
+        'show' => 'user-view',
+        'destroy' => 'user-delete',
+        'assignPermission' => 'assign-permission',
+    ];
 
 }

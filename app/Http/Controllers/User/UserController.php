@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Permission\AssignPermissionRequest;
 use App\Http\Requests\User\UserRequest;
 use App\Http\Resources\User\UserResource;
+use App\Models\User;
 use App\Repositories\User\UserRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -21,21 +22,32 @@ class UserController extends Controller
     {
         $this->userRepository = $userRepository;
 
-        /** Middleware for **Role or Permission** - Grants access if the user has either the role or the permission */
-        $this->middleware('role_or_permission:user-list')->only(['index']);
-        $this->middleware('role_or_permission:user-create')->only(['store']);
-        $this->middleware('role_or_permission:user-update')->only(['update']);
-        $this->middleware('role_or_permission:user-view')->only(['show']);
-        $this->middleware('role_or_permission:user-delete')->only(['destroy']);
-        $this->middleware('role_or_permission:assign-permission')->only(['assignPermission']);
+        $permissions = User::PERMISSIONS;
+        foreach ($permissions as $action => $permission) {
+            /** Middleware for **Role or Permission** - Grants access if the user has either the role or the permission */
 
-        /** Middleware for **Permission** - Grants access only if the user has the specific permission */
-        $this->middleware('permission:user-list')->only(['index']);
-        $this->middleware('permission:user-create')->only(['store']);
-        $this->middleware('permission:user-update')->only(['update']);
-        $this->middleware('permission:user-view')->only(['show']);
-        $this->middleware('permission:user-delete')->only(['destroy']);
-        $this->middleware('permission:assign-permission')->only(['assignPermission']);
+            $this->middleware("role_or_permission:$permission")->only([$action]);
+
+            /** Middleware for **Permission** - Grants access only if the user has the specific permission */
+
+            $this->middleware("permission:$permission")->only([$action]);
+        }
+
+
+//        $this->middleware('role_or_permission:user-list')->only(['index']);
+//        $this->middleware('role_or_permission:user-create')->only(['store']);
+//        $this->middleware('role_or_permission:user-update')->only(['update']);
+//        $this->middleware('role_or_permission:user-view')->only(['show']);
+//        $this->middleware('role_or_permission:user-delete')->only(['destroy']);
+//        $this->middleware('role_or_permission:assign-permission')->only(['assignPermission']);
+//
+//
+//        $this->middleware('permission:user-list')->only(['index']);
+//        $this->middleware('permission:user-create')->only(['store']);
+//        $this->middleware('permission:user-update')->only(['update']);
+//        $this->middleware('permission:user-view')->only(['show']);
+//        $this->middleware('permission:user-delete')->only(['destroy']);
+//        $this->middleware('permission:assign-permission')->only(['assignPermission']);
     }
     /**
      * Display a listing of the resource.
