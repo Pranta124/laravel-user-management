@@ -11,6 +11,7 @@ A Laravel-based API for managing users, roles, and permissions with secure token
   - [Autoload File](#autoload-file)
 - [Virtual Host Setup](#virtual-host-setup)
 - [Usage](#usage)
+- [Authentication](#authentication)
 - [API Documentation](#api-documentation)
 - [License](#license)
 ## Requirements
