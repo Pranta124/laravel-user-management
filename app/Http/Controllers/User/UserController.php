@@ -32,22 +32,6 @@ class UserController extends Controller
 
             $this->middleware("permission:$permission")->only([$action]);
         }
-
-
-//        $this->middleware('role_or_permission:user-list')->only(['index']);
-//        $this->middleware('role_or_permission:user-create')->only(['store']);
-//        $this->middleware('role_or_permission:user-update')->only(['update']);
-//        $this->middleware('role_or_permission:user-view')->only(['show']);
-//        $this->middleware('role_or_permission:user-delete')->only(['destroy']);
-//        $this->middleware('role_or_permission:assign-permission')->only(['assignPermission']);
-//
-//
-//        $this->middleware('permission:user-list')->only(['index']);
-//        $this->middleware('permission:user-create')->only(['store']);
-//        $this->middleware('permission:user-update')->only(['update']);
-//        $this->middleware('permission:user-view')->only(['show']);
-//        $this->middleware('permission:user-delete')->only(['destroy']);
-//        $this->middleware('permission:assign-permission')->only(['assignPermission']);
     }
     /**
      * Display a listing of the resource.
@@ -138,7 +122,8 @@ class UserController extends Controller
         // Update the user via the repository
         $updatedUser = $this->userRepository->update($id, $validated);
 
-        // Sync roles if provided
+        // Using attach instead of sync because a user can have multiple roles,
+        // and we want to add new roles without removing existing ones
         if ($request->has('roles')) {
             $updatedUser->roles()->attach($validated['roles']);
         }
